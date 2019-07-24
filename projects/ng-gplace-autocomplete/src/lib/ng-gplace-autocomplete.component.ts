@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'ng-autocomplete',
@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class NgAutocompleteComponent implements OnInit {
 
   constructor() { }
-
+  @Input() style:any;
+  @Input() placeholder:string = 'Search an address'
   ngOnInit() {
+    console.log(this.style) 
   }
 
 }

@@ -2,7 +2,7 @@
   <div class="title">Google Place Autocomplete Demo</div>
   <div class="container">
     <div class="description">This is a demo application for google place autocomplete angular component</div>
-    <ng-autocomplete [style]="{'width':'200px'}"></ng-autocomplete>
+    <ng-autocomplete [style]="{'width':'200px'}" (setAddress)="setAddress($event)"></ng-autocomplete>
   </div>
 </div>
 

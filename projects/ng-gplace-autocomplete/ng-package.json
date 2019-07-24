@@ -3,5 +3,9 @@
   "dest": "../../dist/ng-gplace-autocomplete",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "@types/googlemaps"
+  ]
 }

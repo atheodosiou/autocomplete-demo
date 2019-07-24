@@ -1,7 +1,6 @@
-
+/// <reference path="../../node_modules/@types/googlemaps/index.d.ts"/>
 import { Component, OnInit, Input, Output, ViewChild, EventEmitter, AfterViewInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-
+// import { FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'ng-autocomplete',
   templateUrl: './ng-gplace-autocomplete.component.html',
@@ -14,7 +13,7 @@ export class NgAutocompleteComponent implements OnInit, AfterViewInit {
   @Input() placeholder: string = 'Search an address'
   @Input() adressType: string;
   @Output() setAddress: EventEmitter<any> = new EventEmitter();
-  // @ViewChild('autocomplete') addresstext: any;
+  @ViewChild('autocomplete',{static: false}) addresstext: any;
   autocompleteInput: string;
   queryWait: boolean;
 
@@ -22,22 +21,22 @@ export class NgAutocompleteComponent implements OnInit, AfterViewInit {
     console.log(this.style)
   }
   ngAfterViewInit() {
-    // this.getPlaceAutocomplete();
+    this.getPlaceAutocomplete();
   }
 
-//   private getPlaceAutocomplete() {
-//     const autocomplete = new google.maps.places.Autocomplete(this.addresstext.nativeElement,
-//       {
-//         componentRestrictions: { country: 'US' },
-//         types: [this.adressType]  // 'establishment'|'address'|'geocode'
-//       });
-//     google.maps.event.addListener(autocomplete, 'place_changed', () => {
-//       const place = autocomplete.getPlace();
-//       this.invokeEvent(place);
-//     });
-//   }
+  private getPlaceAutocomplete() {
+    const autocomplete = new google.maps.places.Autocomplete(this.addresstext.nativeElement,
+      {
+        componentRestrictions: { country: 'GR' },
+        types: [this.adressType]  // 'establishment'|'address'|'geocode'
+      });
+    google.maps.event.addListener(autocomplete, 'place_changed', () => {
+      const place = autocomplete.getPlace();
+      this.invokeEvent(place);
+    });
+  }
 
-//   invokeEvent(place: Object) {
-//     this.setAddress.emit(place);
-// }
+  invokeEvent(place: Object) {
+    this.setAddress.emit(place);
+}
 }

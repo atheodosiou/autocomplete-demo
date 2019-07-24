@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-ng-gplace-autocomplete',
-  template: `
-    <p>
-      ng-gplace-autocomplete works!
-    </p>
-  `,
-  styles: []
+  selector: 'ng-autocomplete',
+  templateUrl:'./ng-gplace-autocomplete.component.html',
+  styleUrls:['./ng-gplace-autocomplete.component.scss']
 })
-export class NgGplaceAutocompleteComponent implements OnInit {
+export class NgAutocompleteComponent implements OnInit {
 
   constructor() { }
 

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { NgGplaceAutocompleteComponent } from './ng-gplace-autocomplete.component';
+import { NgAutocompleteComponent } from './ng-gplace-autocomplete.component';
 
 
 
 @NgModule({
-  declarations: [NgGplaceAutocompleteComponent],
+  declarations: [NgAutocompleteComponent],
   imports: [
   ],
-  exports: [NgGplaceAutocompleteComponent]
+  exports: [NgAutocompleteComponent]
 })
-export class NgGplaceAutocompleteModule { }
+export class NgAutocompleteModule { }

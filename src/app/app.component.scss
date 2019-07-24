@@ -1,0 +1,17 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(236, 236, 236);
+    .title{
+        width: 100%;
+        font-size: 3em;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .container{
+        width: 100%;
+        height: 100%;
+    }
+}

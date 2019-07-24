@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-gplace-autocomplete": [
+        "dist/ng-gplace-autocomplete"
+      ],
+      "ng-gplace-autocomplete/*": [
+        "dist/ng-gplace-autocomplete/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

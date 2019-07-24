@@ -119,6 +119,41 @@
           }
         }
       }
+    },
+    "ng-gplace-autocomplete": {
+      "projectType": "library",
+      "root": "projects/ng-gplace-autocomplete",
+      "sourceRoot": "projects/ng-gplace-autocomplete/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-gplace-autocomplete/tsconfig.lib.json",
+            "project": "projects/ng-gplace-autocomplete/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-gplace-autocomplete/src/test.ts",
+            "tsConfig": "projects/ng-gplace-autocomplete/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-gplace-autocomplete/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-gplace-autocomplete/tsconfig.lib.json",
+              "projects/ng-gplace-autocomplete/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ng-google-place-autocomplete"
 }

@@ -4,5 +4,8 @@
   "peerDependencies": {
     "@angular/common": "^8.1.2",
     "@angular/core": "^8.1.2"
+  },
+  "dependencies": {
+    "@types/googlemaps": "^3.37.0"
   }
 }

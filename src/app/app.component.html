@@ -2,12 +2,6 @@
   <div class="title">Google Place Autocomplete Demo</div>
   <div class="container">
     <div class="description">This is a demo application for google place autocomplete angular component</div>
-    <ng-autocomplete [style]="{'width':'200px'}" (setAddress)="setAddress($event)"></ng-autocomplete>
+    <ng-autocomplete [adressType]="geocode" [style]="{'width':'400px','font-size':'1.1em'}" (setAddress)="setAddress($event)"></ng-autocomplete>
   </div>
 </div>
-
-
-
-<!-- I must add 
-  <script src=”https://maps.googleapis.com/maps/api/js
-    ?libraries=places&key=GOOGLE_KEY"></script> -->

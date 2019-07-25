@@ -1,6 +1,19 @@
 {
   "name": "ng-gplace-autocomplete",
   "version": "0.0.1",
+  "description": "An angular componet for google maps autocomplete!",
+  "author": "Anastasios Theodosiou",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atheodosiou/autocomplete-demo"
+  },
+  "keywords": [
+    "angular",
+    "javascript",
+    "google",
+    "maps",
+    "autocomplete"
+  ],
   "peerDependencies": {
     "@angular/common": "^8.1.2",
     "@angular/core": "^8.1.2"

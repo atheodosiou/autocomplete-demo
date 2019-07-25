@@ -1,24 +1,30 @@
 # NgGplaceAutocomplete
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+Angular google autocomplete component
 
-## Code scaffolding
+## Installation
+npm install --save @types/googlemaps
 
-Run `ng generate component component-name --project ng-gplace-autocomplete` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-gplace-autocomplete`.
-> Note: Don't forget to add `--project ng-gplace-autocomplete` or else it will be added to the default project in your `angular.json` file. 
+Then link google maps javascript api in your index.html with YOUR_KEY
 
-## Build
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=YOUR_KEY"></script>
 
-Run `ng build ng-gplace-autocomplete` to build the project. The build artifacts will be stored in the `dist/` directory.
+After that, import NgAutocompleteModule to your project and use the auto complete component like bellow
 
-## Publishing
+### For Residential Address:
 
-After building your library with `ng build ng-gplace-autocomplete`, go to the dist folder `cd dist/ng-gplace-autocomplete` and run `npm publish`.
+<ng-autocomplete adressType="geocode" [style]="{'width':'400px','font-size':'1.1em'}" (setAddress)="setAddress($event)"></ng-autocomplete>
 
-## Running unit tests
+### For Office Address:
 
-Run `ng test ng-gplace-autocomplete` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<ng-autocomplete adressType="establishment" [style]="{'width':'400px','font-size':'1.1em'}" (setAddress)="setAddress($event)"></ng-autocomplete>
 
-## Further help
+On component file getAddress / getEstablishmentAddress method will emit place object which can be parsed to show on screen in required format.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+...
+getAddress(place: object) { 
+   this.address = place[‘formatted_address’];
+...
+
+#### GitHub repository: 
+https://github.com/atheodosiou/autocomplete-demo

@@ -1,7 +1,15 @@
 <div class="wrapper">
-  <div class="title">Google Place Autocomplete Demo</div>
+  <div class="title">
+    <div>Place Autocomplete Demo</div>
+    <div class="links">
+      <div>GitHub</div>
+      <div>NPM</div>
+    </div>
+  </div>
   <div class="container">
-    <div class="description">This is a demo application for google place autocomplete angular component</div>
-    <ng-autocomplete [adressType]="geocode" [style]="{'width':'400px','font-size':'1.1em'}" (setAddress)="setAddress($event)"></ng-autocomplete>
+    <div class="description">This is a demo application to demonstrate the ng-autocomplete angular component</div>
+    <ng-autocomplete [adressType]="geocode" 
+    [style]="{'width':'600px','font-size':'1.6em','padding':'.25em .5em','border-radius':'5px'}" 
+    (setAddress)="setAddress($event)"></ng-autocomplete>
   </div>
 </div>

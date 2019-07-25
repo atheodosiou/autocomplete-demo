@@ -6,6 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This is a demo project for ng-gplace-autocomplete angular component.
 
+![demo](https://user-images.githubusercontent.com/20326000/61914783-66e16900-af4a-11e9-93a2-e7fd61a0158e.png)
+
 ## Integration
 The first thing we have to do, is to install the ng-gplace-autocomlete in our project via npm.
 ```sh

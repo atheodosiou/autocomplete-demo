@@ -12,13 +12,13 @@ export class NgAutocompleteComponent implements OnInit, AfterViewInit {
   @Input() style: any;
   @Input() placeholder: string = 'Search an address'
   @Input() adressType: string;
-  @Output() setAddress: EventEmitter<any> = new EventEmitter();
+  @Output() onAddressChange: EventEmitter<any> = new EventEmitter();
   @ViewChild('autocomplete',{static: false}) addresstext: any;
+  
   autocompleteInput: string;
   queryWait: boolean;
 
   ngOnInit() {
-    console.log(this.style)
   }
   ngAfterViewInit() {
     this.getPlaceAutocomplete();
@@ -37,6 +37,6 @@ export class NgAutocompleteComponent implements OnInit, AfterViewInit {
   }
 
   invokeEvent(place: Object) {
-    this.setAddress.emit(place);
+    this.onAddressChange.emit(place);
 }
 }

@@ -48,7 +48,7 @@ export class AppModule { }
 
 2. Add the ng-autocomplete component to your app.component.html like bellow
 ```html
- <ng-autocomplete [adressType]="geocode" (setAddress)="setAddress($event)"></ng-autocomplete>
+ <ng-autocomplete [adressType]="geocode" (onAddressChange)="onAddressChange($event)"></ng-autocomplete>
 ```
 3. Set addressType property according to your preference:
 
@@ -56,9 +56,9 @@ export class AppModule { }
   
     b. For Office Address Use: "establishment"
 
-4. Attach a function to the (setAddress) event like above and add this function to you app.component.ts file.
+4. Attach a function to the (onAddressChange) event like above and add this function to you app.component.ts file.
 ```typescript
-setAddress(event:any){
+onAddressChange(event:any){
     //Do some staff
     console.log(event);
   }
@@ -92,7 +92,7 @@ __proto__: Object
 ## Styling
 You can easily style the ng-autocomplete component by adding your styles as an object to the style property like below:
 ```html
- <ng-autocomplete [adressType]="establishment" [style]="{'width':'400px','font-size':'1.1em'}" (setAddress)="setAddress($event)"></ng-autocomplete>
+ <ng-autocomplete [adressType]="establishment" [style]="{'width':'400px','font-size':'1.1em'}" (onAddressChange)="onAddressChange($event)"></ng-autocomplete>
 ```
 # GitHub
 

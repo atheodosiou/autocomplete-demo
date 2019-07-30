@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { NgAutocompleteModule } from 'ng-gplace-autocomplete';
+import { NgAutocompleteModule } from 'ng-gplace-autocomplete'
 @NgModule({
   declarations: [
     AppComponent

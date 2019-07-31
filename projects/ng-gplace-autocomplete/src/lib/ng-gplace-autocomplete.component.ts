@@ -6,20 +6,19 @@ import { Component, OnInit, Input, Output, ViewChild, EventEmitter, AfterViewIni
   templateUrl: './ng-gplace-autocomplete.component.html',
   styleUrls: ['./ng-gplace-autocomplete.component.scss']
 })
-export class NgAutocompleteComponent implements OnInit, AfterViewInit {
+export class NgAutocompleteComponent implements AfterViewInit {
 
-  constructor(private ngZone:NgZone) { }
+  constructor(private ngZone: NgZone) { }
   @Input() style: any;
   @Input() placeholder: string = 'Search an address'
-  @Input() adressType: string;
+  @Input() addressType: string;
+  @Input() country: string[] = ['us'];
   @Output() onAddressChange: EventEmitter<any> = new EventEmitter();
-  @ViewChild('autocomplete',{static: false}) addresstext: any;
-  
+  @ViewChild('autocomplete', { static: false }) addresstext: any;
+
   autocompleteInput: string;
   queryWait: boolean;
-
-  ngOnInit() {
-  }
+  
   ngAfterViewInit() {
     this.getPlaceAutocomplete();
   }
@@ -27,11 +26,11 @@ export class NgAutocompleteComponent implements OnInit, AfterViewInit {
   private getPlaceAutocomplete() {
     const autocomplete = new google.maps.places.Autocomplete(this.addresstext.nativeElement,
       {
-        componentRestrictions: { country: 'GR' },
-        types: [this.adressType]  // 'establishment'|'address'|'geocode'
+        componentRestrictions: { country: this.country },
+        types: [this.addressType] // 'establishment'|'address'|'geocode'
       });
     google.maps.event.addListener(autocomplete, 'place_changed', () => {
-      this.ngZone.run(()=>{
+      this.ngZone.run(() => {
         const place = autocomplete.getPlace();
 
         //verify result
@@ -40,12 +39,12 @@ export class NgAutocompleteComponent implements OnInit, AfterViewInit {
         }
 
         // console.log('Inside ng-gplace-autocomplete',place.geometry.location.lat(),place.geometry.location.lng())
-        const data={
-          location:{
-            lat:place.geometry.location.lat(),
-            lng:place.geometry.location.lng()
+        const data = {
+          location: {
+            lat: place.geometry.location.lat(),
+            lng: place.geometry.location.lng()
           },
-          place:place
+          place: place
         }
         this.invokeEvent(data);
       });
@@ -54,5 +53,5 @@ export class NgAutocompleteComponent implements OnInit, AfterViewInit {
 
   invokeEvent(place: any) {
     this.onAddressChange.emit(place);
-}
+  }
 }

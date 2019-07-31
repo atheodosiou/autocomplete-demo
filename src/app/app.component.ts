@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-google-place-autocomplete';
+  addressType:'address';
+  country=['gr'];
 
   setAddress(event){
     console.log(event);

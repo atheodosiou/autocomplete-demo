@@ -4,14 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build":"ng build",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build_lib": "ng build ng-gplace-autocomplete",
     "npm_pack": "cd dist/ng-gplace-autocomplete && npm pack",
     "package": "npm run build_lib && npm run npm_pack",
-    "publish":"cd projects/ng-gplace-autocomplete && npm version patch --force && npm run package && npm publish"
+    "publish": "cd projects/ng-gplace-autocomplete && npm version patch --force && cd ../../ && npm run package && npm publish"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +24,7 @@
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
     "@types/googlemaps": "^3.37.0",
-    "ng-gplace-autocomplete": "file:dist/ng-gplace-autocomplete/ng-gplace-autocomplete-0.0.10.tgz",
+    "ng-gplace-autocomplete": "0.0.13",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

@@ -1,16 +1,17 @@
 {
   "name": "ng-google-place-autocomplete",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "build":"ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build_lib": "ng build ng-gplace-autocomplete",
     "npm_pack": "cd dist/ng-gplace-autocomplete && npm pack",
     "package": "npm run build_lib && npm run npm_pack",
-    "publish": "npm version patch --force && npm publish"
+    "publish":"cd projects/ng-gplace-autocomplete && npm version patch --force && npm run package && npm publish"
   },
   "private": true,
   "dependencies": {

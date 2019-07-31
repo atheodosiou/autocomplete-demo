@@ -48,14 +48,13 @@ export class AppModule { }
 
 2. Add the ng-autocomplete component to your app.component.html like bellow
 ```html
- <ng-autocomplete [adressType]="geocode" (onAddressChange)="onAddressChange($event)"></ng-autocomplete>
+ <ng-autocomplete [addressType]="type" [country]="countryRestrictions" (onAddressChange)="onAddressChange($event)"></ng-autocomplete>
 ```
-3. Set addressType property according to your preference:
-
-    a. For Residential Address Use: "geocode"
-  
-    b. For Office Address Use: "establishment"
-
+3. Create two consts in your app.component.ts for addresType and country parameters
+```javascript
+  type:'address';  //This value could be address | geocode | establishment
+  countryRestrictions=['gr']; //If not set, default is ['us']
+  ```
 4. Attach a function to the (onAddressChange) event like above and add this function to you app.component.ts file.
 ```typescript
 onAddressChange(event:any){
@@ -65,34 +64,12 @@ onAddressChange(event:any){
 ```
 After that, on every address selection, we should get a json object about the selected address like the following:
 
-```json
-{address_components: Array(3), adr_address: "<span class="locality">Θεσσαλονίκη</span>, <span class="country-name">Ελλάδα</span>", formatted_address: "Θεσσαλονίκη, Ελλάδα", geometry: {…}, icon: "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png", …}
-address_components: (3) [{…}, {…}, {…}]
-adr_address: "<span class="locality">Θεσσαλονίκη</span>, <span class="country-name">Ελλάδα</span>"
-formatted_address: "Θεσσαλονίκη, Ελλάδα"
-geometry: {location: _.R, viewport: _.Gd}
-html_attributions: []
-icon: "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png"
-id: "e7e3f33823c95f045938299e92342f40e1c1f1cd"
-name: "Θεσσαλονίκη"
-photos: (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
-place_id: "ChIJ7eAoFPQ4qBQRqXTVuBXnugk"
-reference: "ChIJ7eAoFPQ4qBQRqXTVuBXnugk"
-scope: "GOOGLE"
-types: (2) ["locality", "political"]
-url: "https://maps.google.com/?q=%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%BA%CE%B7,+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1&ftid=0x14a838f41428e0ed:0x9bae715b8d574a9"
-utc_offset: (...)
-utc_offset_minutes: 180
-vicinity: "Θεσσαλονίκη"
-get utc_offset: ƒ ()
-set utc_offset: ƒ (b)
-__proto__: Object
-```
+![Screenshot from 2019-08-01 02-23-40](https://user-images.githubusercontent.com/20326000/62254914-ac4ade00-b403-11e9-9215-ca14b4142343.png)
 
 ## Styling
 You can easily style the ng-autocomplete component by adding your styles as an object to the style property like below:
 ```html
- <ng-autocomplete [adressType]="establishment" [style]="{'width':'400px','font-size':'1.1em'}" (onAddressChange)="onAddressChange($event)"></ng-autocomplete>
+ <ng-autocomplete [addressType]="type" [country]="countryRestrictions" [style]="{'width':'400px','font-size':'1.1em'}" (onAddressChange)="onAddressChange($event)"></ng-autocomplete>
 ```
 # GitHub
 

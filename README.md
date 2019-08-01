@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/atheodosiou/autocomplete-demo.svg?branch=master)](https://travis-ci.org/atheodosiou/autocomplete-demo)
+![npm](https://img.shields.io/npm/dt/ng-gplace-autocomplete?color=blue)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 

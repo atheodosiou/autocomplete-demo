@@ -2,8 +2,8 @@
   <div class="title">
     <div>Place Autocomplete Demo</div>
     <div class="links">
-      <div>GitHub</div>
-      <div>NPM</div>
+      <a href="https://github.com/atheodosiou/autocomplete-demo" target="_blank">GitHub</a>
+      <a href="https://www.npmjs.com/package/ng-gplace-autocomplete" target="_blank">NPM</a>
     </div>
   </div>
   <div class="container">
@@ -12,7 +12,9 @@
     [style]="{'width':'600px','font-size':'1.6em','padding':'.25em .5em','border-radius':'5px'}" 
     (onAddressChange)="setAddress($event)"></ng-autocomplete>
     <div class="map">
-      Map goes here!
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
     </div>
   </div>
 </div>

@@ -9,7 +9,13 @@ export class AppComponent {
   addressType:'address';
   country=['gr'];
 
+  lat: number = 40.6400629;
+  lng: number = 22.944419100000005;
+  zoom:number = 13;
   setAddress(event){
     console.log(event);
+    this.lat = event.location.lat;
+    this.lng = event.location.lng;
+    this.zoom = 17;
   }
 }
